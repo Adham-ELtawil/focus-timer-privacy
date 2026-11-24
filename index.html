@@ -37,37 +37,53 @@
 <body>
 
 <h1>Privacy Policy for Focus Timer</h1>
-<p class="updated">Last updated: July 29, 2026</p>
+<p class="updated">Last updated: November 24, 2026</p>
 
-<p>Focus Timer ("the extension") is a productivity tool that provides a countdown timer, stopwatch, and Pomodoro-style focus timer. This Privacy Policy explains how the extension handles information.</p>
+<p>Focus Timer ("the extension") is a browser extension with a countdown timer, a Pomodoro timer, a stopwatch, a world clock and optional site blocking during focus sessions. This policy explains what the extension stores and what it does with it.</p>
 
-<h2>Data Collection</h2>
-<p>Focus Timer does <strong>not</strong> collect, store, transmit, or share any personal data, browsing activity, or usage analytics. The extension does not use any remote servers, analytics tools, or third-party tracking of any kind.</p>
+<h2>Summary</h2>
+<p>Focus Timer does not collect, send or share any personal data. It has no account, no server, no analytics and no tracking. Everything it saves stays in your browser's local extension storage on your device.</p>
 
-<h2>Local Storage</h2>
-<p>The extension uses the browser's local storage (via the <code>storage</code> permission) only to save your own preferences on your own device, such as:</p>
+<h2>What is stored on your device</h2>
+<p>The extension uses the browser's local storage (the <code>storage</code> permission) to keep these items:</p>
 <ul>
-  <li>Timer duration and Pomodoro settings</li>
-  <li>Quick preset values</li>
+  <li><strong>The current timer session</strong>: whether a timer is running, paused or done, when it ends, the time left, the session length, and the optional "What are you focusing on?" message (up to 120 characters). For a Pomodoro session it also keeps the current phase, the cycle number and the phase lengths.</li>
+  <li><strong>Your Pomodoro lengths</strong>: the focus, break and long break minutes you set.</li>
+  <li><strong>Your last focus message</strong>, so the box is filled in next time.</li>
+  <li><strong>The stopwatch state</strong>: whether it is running, when it started, the elapsed time and your laps.</li>
+  <li><strong>Display choices</strong>: which tab you last used (Timer or Stopwatch, Standard or Pomodoro), whether the World Clock and block list are collapsed, and the time zones you added to the World Clock.</li>
+  <li><strong>Your block list</strong>: the sites you chose to block, any custom sites you added, and whether blocking is switched on.</li>
+  <li><strong>The last version whose "What's new" note you saw</strong>, so the note shows only once per update.</li>
 </ul>
-<p>This data never leaves your device and is not accessible to the developer or any third party.</p>
+<p>The extension does not store your browsing history, the pages you visit, or the addresses of your tabs.</p>
+<p>You can delete all of this at any time by removing the extension, or by clearing its data from the browser's extension settings.</p>
 
-<h2>Permissions Used</h2>
+<h2>Site blocking</h2>
+<p>Site blocking only does anything if you switch it on and choose at least one site. While a focus session is running (or paused), the extension:</p>
 <ul>
-  <li><strong>alarms</strong> — to schedule and trigger timer and Pomodoro session alerts.</li>
-  <li><strong>notifications</strong> — to notify you when a session, break, or timer ends.</li>
-  <li><strong>storage</strong> — to save your preferences locally on your device.</li>
-  <li><strong>offscreen</strong> — to play a notification sound when a timer completes.</li>
+  <li>Creates blocking rules in your browser with the <code>declarativeNetRequest</code> permission, built only from your own block list. The browser applies these rules itself; no list is downloaded from anywhere. Some built-in choices cover a second address: YouTube also covers youtu.be, and X also covers twitter.com.</li>
+  <li>Uses the <code>tabs</code> permission to read the address of a tab when it changes, only to check it against your block list. If the site is on the list, the tab is sent to the extension's own "blocked" page. This check happens locally; tab addresses are never saved or sent anywhere.</li>
+</ul>
+<p>The rules are removed when the session ends or is reset, and during Pomodoro breaks.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><strong>alarms</strong>: to end the timer on time, even when the popup is closed.</li>
+  <li><strong>notifications</strong>: to tell you when a timer, focus phase or break ends.</li>
+  <li><strong>storage</strong>: to keep the items listed above on your device.</li>
+  <li><strong>offscreen</strong>: to play the end-of-timer sound.</li>
+  <li><strong>declarativeNetRequest</strong>: to block the sites on your block list during a focus session.</li>
+  <li><strong>tabs</strong>: to check a tab's address against your block list, locally, and show the blocked page.</li>
 </ul>
 
-<h2>Third-Party Sharing</h2>
-<p>Focus Timer does not sell, transfer, or share any user data with third parties, because it does not collect any user data in the first place.</p>
+<h2>Network and third parties</h2>
+<p>Focus Timer makes no network requests of its own. The only outside links are ones you choose to click: the store review page and the developer's LinkedIn profile. Focus Timer does not sell, transfer or share any data with anyone, because it does not collect any.</p>
 
-<h2>Changes to This Policy</h2>
-<p>If this policy changes in the future, the updated version will be posted at this same URL with a revised "Last updated" date.</p>
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the updated version will be posted at the same address with a new "Last updated" date.</p>
 
 <h2>Contact</h2>
-<p>If you have questions about this Privacy Policy, you can reach the developer, Adham Eltawil, via the contact information on the Chrome Web Store listing.</p>
+<p>If you have questions about this policy, you can reach the developer, Adham Eltawil, through the contact details on the extension's Microsoft Edge Add-ons or Chrome Web Store listing.</p>
 
 <footer>
   Focus Timer &mdash; developed by Adham Eltawil
